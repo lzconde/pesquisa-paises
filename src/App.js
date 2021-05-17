@@ -1,25 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Paises from './components/paises/pesquisaPaises';
+import {Provider} from "react-redux"; //Conecta toda a Aplicação com a Store
+import store from "./store";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        //O Provider deve ficar fora de toda a aplicação
+      <Provider store={store}>
+      <Paises/>
+      </Provider>
+      
   );
-}
+} 
 
 export default App;
